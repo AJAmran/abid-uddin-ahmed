@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abid Uddin Ahmed | Director Portfolio
 
-## Getting Started
+A premium, high-performance professional portfolio built for **Abid Uddin Ahmed**, Director at X-group Chain Restaurant & Hospitality Management and BCFCC. This application is engineered for maximum visual impact, accessibility, and industry-leading performance metrics.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15%2B-black?style=for-the-badge&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Motion](https://img.shields.io/badge/Motion-React-ff0055?style=for-the-badge&logo=framer)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Performance Excellence
+
+This project is meticulously optimized for **Core Web Vitals**, consistently aiming for high Lighthouse scores across all categories.
+
+### Key Optimization Strategies:
+
+- **Zero-Hydration FCP**: Critical Hero content is visible immediately on first paint by disabling entry animations for above-the-fold components.
+- **LCP Speed**: Hero images are optimized via `next/image` with `priority`, `fetchPriority="high"`, and `preconnect` hints for Cloudinary.
+- **Compositor-Only Animations**: All continuous animations (orbs, glows, floating effects) utilize only `opacity` and `transform` to avoid main-thread jank and non-composited repaints.
+- **LazyMotion Integration**: Uses a centralized `LazyMotion` features bundle (~18KB) instead of the full Framer Motion library, significantly reducing JavaScript execution time.
+- **FOUC Prevention**: A synchronous inline theme-detection script in the `<head>` prevents "Flash of Unstyled Content" for dark/light mode.
+
+## ♿ Accessibility First (A11y)
+
+Built with inclusivity as a core requirement:
+
+- **WCAG 2.1 Compliance**: Contrast ratios for all text elements meet or exceed AA standards.
+- **Semantic Navigation**: The floating BottomDock is built using semantic `<nav>`, `<ul>`, and `<li>` elements for perfect screen reader compatibility.
+- **Interactive Targets**: All buttons and links maintain a minimum 44x44px tap target area.
+- **Focus Management**: Customized `focus-visible` rings ensure clear visual feedback for keyboard users without affecting mouse users.
+
+## 🛠️ Technical Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4.0](https://tailwindcss.com/)
+- **Interactions**: [Motion (React)](https://motion.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Typography**: Inter (Sans) & Space Grotesk (Display) via `next/font`
+- **Asset Management**: Cloudinary for high-performance image delivery
+
+## 📦 Project Structure
+
+```text
+├── app/                  # Next.js App Router (Layouts, Pages, Metadata)
+├── components/           # Reusable UI components (SpotlightCard, Section, etc.)
+│   ├── BottomDock.tsx    # Semantic floating navigation
+│   ├── HeroMotion.tsx    # Optimized LCP container
+│   └── MotionProvider.tsx # Centralized Framer Motion provider
+├── public/               # Static assets and PWA manifest
+└── next.config.ts        # Optimized caching and security headers
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 20.x or higher
+- npm / pnpm / bun
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 SEO & Social
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Dynamic Meta Tags**: Automated OpenGraph and Twitter card generation.
+- **JSON-LD**: Embedded Schema.org structured data for enhanced Search Engine presence.
+- **Robots & Sitemap**: Dynamically generated files for optimal crawling performance.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with precision by **Antigravity**.

@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Dark mode via `.dark` class (set by inline <head> script) ── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Design Tokens ── */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Base Styles ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Prevent tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-200;
+    @apply antialiased font-sans transition-colors duration-500;
+    @apply selection:bg-cyan-500/30 selection:text-cyan-900 dark:selection:text-cyan-200;
+    /* Prevent horizontal overflow on small screens */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  /* Improve touch scrolling on iOS */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom scrollbar — hidden on mobile (touch devices use native) */
+  @media (hover: hover) {
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      @apply bg-slate-100 dark:bg-slate-900;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-cyan-400 dark:bg-cyan-600;
+    }
+  }
+
+  /* Focus visible — keyboard only, not mouse/touch */
+  :focus-visible {
+    @apply outline-none ring-2 ring-cyan-500 ring-offset-2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Animations (compositor-only: opacity + transform only) ── */
+@layer utilities {
+  /*
+   * Hero glow pulse — only animates opacity (composited).
+   * Does NOT animate filter or blur (which would cause non-composited repaint).
+   * Replaces Tailwind's `animate-pulse` on blur elements.
+   */
+  .hero-glow {
+    animation: hero-glow-pulse 4s ease-in-out infinite;
+    will-change: opacity;
+  }
+
+  @keyframes hero-glow-pulse {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  /*
+   * Orb: safe-pulse — opacity only (composited).
+   * Use this instead of `animate-pulse` on elements with CSS blur filter.
+   * Reason: blur filter creates a new stacking context; animating it
+   * forces repaint on every frame (non-composited = jank).
+   */
+  .orb-pulse {
+    animation: orb-safe-pulse 6s ease-in-out infinite;
+    will-change: opacity;
+  }
+
+  @keyframes orb-safe-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Safe float animation — only transform: translateY (composited) */
+  .safe-float {
+    animation: safe-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @keyframes safe-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-noise {
+    animation: noise-texture 0.2s steps(2) infinite;
+  }
+
+  @keyframes noise-texture {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    10% {
+      transform: translate(-1%, -1%);
+    }
+    20% {
+      transform: translate(-2%, 1%);
+    }
+    30% {
+      transform: translate(1%, -2%);
+    }
+    40% {
+      transform: translate(-1%, 2%);
+    }
+    50% {
+      transform: translate(-2%, -1%);
+    }
+    60% {
+      transform: translate(2%, 1%);
+    }
+    70% {
+      transform: translate(1%, 2%);
+    }
+    80% {
+      transform: translate(-1%, -1%);
+    }
+    90% {
+      transform: translate(1%, -2%);
+    }
+  }
 }

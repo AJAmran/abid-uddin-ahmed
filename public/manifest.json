@@ -1,0 +1,16 @@
+{
+  "name": "Abid Uddin Ahmed | Director",
+  "short_name": "Abid Ahmed",
+  "description": "Professional portfolio of Abid Uddin Ahmed, Director of X-group Chain Restaurant & Hospitality Management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
