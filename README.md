@@ -36,7 +36,7 @@ Built with inclusivity as a core requirement:
 - **Styling**: [Tailwind CSS v4.0](https://tailwindcss.com/)
 - **Interactions**: [Motion (React)](https://motion.dev/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Typography**: Inter (Sans) & Space Grotesk (Display) via `next/font`
+- **Typography**: Manrope (Body) & Fraunces (Display Serif) via `next/font`
 - **Asset Management**: Cloudinary for high-performance image delivery
 
 ## 📦 Project Structure
