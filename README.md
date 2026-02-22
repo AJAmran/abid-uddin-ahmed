@@ -13,13 +13,13 @@ A premium, high-performance professional portfolio built for **Abid Uddin Ahmed*
 
 This project is meticulously optimized for **Core Web Vitals**, consistently aiming for high Lighthouse scores across all categories.
 
-### Key Optimization Strategies:
+### Key Creative Features:
 
-- **Zero-Hydration FCP**: Critical Hero content is visible immediately on first paint by disabling entry animations for above-the-fold components.
-- **LCP Speed**: Hero images are optimized via `next/image` with `priority`, `fetchPriority="high"`, and `preconnect` hints for Cloudinary.
-- **Compositor-Only Animations**: All continuous animations (orbs, glows, floating effects) utilize only `opacity` and `transform` to avoid main-thread jank and non-composited repaints.
-- **LazyMotion Integration**: Uses a centralized `LazyMotion` features bundle (~18KB) instead of the full Framer Motion library, significantly reducing JavaScript execution time.
-- **FOUC Prevention**: A synchronous inline theme-detection script in the `<head>` prevents "Flash of Unstyled Content" for dark/light mode.
+- **Executive Bento Grid**: Structural information (Overview, Education, Highlights) is organized in a trendy, high-impact bento-style layout.
+- **Authority Typography**: Uses a prestigious Serif (**Fraunces**) for headings and a clean Sans (**Manrope**) for technical content.
+- **Visionary Branding**: Large-scale, high-contrast typography sections for maximum emotional impact and personal branding.
+- **Glassmorphism++**: Enhanced with dynamic spotlight tracking, glass-shine hover effects, and deep-blur background isolation.
+- **Zero-Hydration FCP**: Critical Above-the-fold content is visible instantly via animation-bypass for the Hero section.
 
 ## ♿ Accessibility First (A11y)
 
