@@ -137,7 +137,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-x-4 sm:gap-y-2 text-[10px] xs:text-xs sm:text-base md:text-lg text-slate-500 dark:text-slate-400 font-semibold tracking-wide max-w-[280px] xs:max-w-xs sm:max-w-2xl mx-auto uppercase opacity-95 text-center leading-relaxed">
                   <a href="https://www.x-grouprestaurant.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors whitespace-nowrap">
-                    X-group Chain
+                    X-group
                   </a>
                   <span aria-hidden="true" className="text-cyan-500">•</span>
                   <a href="https://bcfccbd.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-700 dark:hover:text-cyan-400 transition-colors whitespace-nowrap">
